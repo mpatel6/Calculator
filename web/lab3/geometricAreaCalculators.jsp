@@ -47,7 +47,7 @@
                         <input type="submit" id="rectAreaSubmit" name="rectAreaSubmit" value="Calculate" class="btn btn-primary">
                     </div>
 
-                    <div>
+                    <div class="text-center">
                         <h3> <strong>Area: 
 
                                 <% Object objRectArea = request.getAttribute("areaRect");
@@ -91,7 +91,7 @@
                         <input type="submit" id="triangleAreaSubmit" name="triangleAreaSubmit" value="Calculate" class="btn btn-primary">
                     </div>
 
-                    <div>
+                    <div class="text-center">
                         <h3> <strong>Area:  <% Object objTriArea = request.getAttribute("areaTri");
                             if (objTriArea != null) {
                                 out.print((Double) objTriArea);
@@ -126,7 +126,7 @@
                         <input type="submit" id="triangleAreaSubmit" name="triangleAreaSubmit" value="Calculate" class="btn btn-primary">
                     </div>
 
-                    <div>
+                    <div class="text-center">
                         <h3> <strong>Area: <% Object objCircArea = request.getAttribute("areaCirc");
                             if (objCircArea != null) {
                                 out.print((Double) objCircArea);
