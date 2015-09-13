@@ -13,8 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lab3.model.CircleAreaCalculatorStrategy;
 import lab3.model.GeometricAreaCalculator;
 import lab3.model.RectangleAreaCalculatorStrategy;
+import lab3.model.TriangleAreaCalculatorStrategy;
 
 /**
  *
@@ -23,7 +25,7 @@ import lab3.model.RectangleAreaCalculatorStrategy;
 @WebServlet(name = "MainControllerLab3", urlPatterns = {"/MainControllerLab3"})
 public class MainControllerLab3 extends HttpServlet {
 
-    private static final String RESULT_PAGE = "/lab3/geometricAreaCalculators.jsp";
+    private static final String RESULT_PAGE = "lab3/geometricAreaCalculators.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,11 +45,19 @@ public class MainControllerLab3 extends HttpServlet {
 
         if (calcType != null) {
             if (calcType.equals("rect")) {
-
                 String length = request.getParameter("length");
                 String width = request.getParameter("width");
                 areaService = new RectangleAreaCalculatorStrategy(length, width);
                 request.setAttribute("areaRect", areaService.getArea());
+            } else if (calcType.equals("tri")) {
+                String height = request.getParameter("height");
+                String base = request.getParameter("base");
+                areaService = new TriangleAreaCalculatorStrategy(height, base);
+                request.setAttribute("areaTri", areaService.getArea());
+            } else if (calcType.equals("circ")) {
+                String radius = request.getParameter("radius");
+                areaService = new CircleAreaCalculatorStrategy(radius);
+                request.setAttribute("areaCirc", areaService.getArea());
             }
         }
 

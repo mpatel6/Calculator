@@ -23,7 +23,7 @@
         <header><h1>RECTANGLE AREA CALCULATOR</h1></header>
 
 
-        <form name="rect" id="rect" method="GET" action="../MainControllerLab2"> 
+        <form name="rect" id="rect" method="POST" action="MainControllerLab2"> 
             <table>
                 <caption>Enter Rectangle Dimensions</caption>
                 
@@ -58,12 +58,11 @@
                     <td colspan="2"> <input type="submit" name="calcAreaSubmit" id="calcAreaSubmit" value="Submit"></td>
                 </tr>
             </table>
-        </form>
-                
-                
-        <h1>Rectangle Area final: ${area}</h1>
+                    
+                    
+        <h1>Rectangle Area using EL: ${area}</h1>
 
-        <h1>Rectangle Area: <%            
+        <h1>Rectangle Area using JAVA code: <%            
             Object objResult = request.getAttribute("area");
             if (objResult != null) 
             {
@@ -71,6 +70,9 @@
             }
             %>
         </h1>
+        </form>      
+                
+       
 
     </body>
 </html>
