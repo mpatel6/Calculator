@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="length"> Length: </label>
                         <div class="col-sm-8">                    
-                            <input class="form-control" type="text" id="length" name="length" placeholder="Enter Length" value="<c:out value="${param.length}"> </c:out>" >
+                            <input class="form-control" type="text" id="length" name="length" placeholder="Enter Length" value="${param.length}" >
                             </div>
                         </div>
 
@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="base"> Base: </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="width" name="base" placeholder="Enter Base" value="<c:out value="${param.base}"> </c:out>">
+                                <input class="form-control" type="text" id="width" name="base" placeholder="Enter Base" value="${param.base}">
                             </div> 
                         </div>
 
@@ -114,7 +114,7 @@
                 </form>
 
             </div>
-
+ </div>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -129,7 +129,7 @@
                         <img src="image/circle.jpg" alt="circle" width="460" height="345">
                     </div>
 
-                    <div class="item">
+                    <div class="item image-rounded">
                         <img src="image/rectangle.jpg" alt="rectangle" width="460" height="345">
                     </div>
 
@@ -151,6 +151,6 @@
             </div>
 
 
-        </div>
+       
     </body>
 </html>
